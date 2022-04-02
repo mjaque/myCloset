@@ -1,49 +1,56 @@
 <?php
 
-class Conexion{
+class Conexion
+{
 
-
-    function __construct() {
+    function __construct()
+    {
         include "configuracionBD.php";
 
-
-
-        $this->mysqli = new mysqli(SERVIDOR,USUARIO, PASSWORD, DB);
-    }
-    public function consultas($consulta){
-
-        return  $this->resultado=$this->mysqli->query($consulta);
+        $this->mysqli = new mysqli(SERVIDOR, USUARIO, PASSWORD, DB);
     }
 
-    public function extraerFila($resultado){
-        return $this->fila =$resultado->fetch_array();
-    }
-    public function consultasMultiple($consulta){
+    public function consultas($consulta)
+    {
 
-        $this->resultado=$this->mysqli->multi_query($consulta);
+        return  $this->resultado = $this->mysqli->query($consulta);
     }
-    public function  filasAfectadas(){
-         return $this->mysqli->affected_rows;
 
-
+    public function extraerFila($resultado)
+    {
+        return $this->fila = $resultado->fetch_array();
     }
-    public function  numeroFilas($resultado){
+    
+    public function consultasMultiple($consulta)
+    {
+
+        $this->resultado = $this->mysqli->multi_query($consulta);
+    }
+
+    public function  filasAfectadas()
+    {
+        return $this->mysqli->affected_rows;
+    }
+
+    public function  numeroFilas($resultado)
+    {
         return $numeroFilas = $resultado->num_rows;
-
-
     }
 
-    public function error(){
+    public function error()
+    {
 
         return  $this->mysqli->error;
     }
 
-    public function errno(){
+    public function errno()
+    {
 
         return  $this->mysqli->errno;
     }
 
-    public function cerrarConexion(){
+    public function cerrarConexion()
+    {
         $this->mysqli->close();
     }
 }
