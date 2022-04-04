@@ -42,10 +42,6 @@ CREATE TABLE `my_closet`.`relprendaoutfit` (
     idOutfit INT NOT NULL , 
     idPrenda INT NOT NULL );
 
-CREATE TABLE `my_closet`.`relprendaoutfit` ( 
-    idOutfit INT NOT NULL , 
-    idPrenda INT NOT NULL )
-
 
 
 
