@@ -2,5 +2,5 @@
 define("SERVIDOR", "localhost");
 define("USUARIO", "root");
 define("PASSWORD", "");
-define("DB", "fototienda");
+define("DB", "my_closet");
 ?>
