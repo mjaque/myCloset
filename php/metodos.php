@@ -44,7 +44,7 @@ class Metodos
     public function iniciarSesion($correo, $password)
     {
         //Creamos al consulta
-        $consulta = "SELECT * FROM clientes WHERE correo = ?";
+        $consulta = "SELECT * FROM usuario WHERE correo = ?";
 
         //Preparamos con preparae
         if (!$sentencia = $this->conexion->mysqli->prepare($consulta)) {
