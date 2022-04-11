@@ -38,12 +38,12 @@ class Rest {
     static enviar() {
         const opciones = {
             method: 'POST',
-            body: JSON.stringify({usuario : "gbfg", al:'kljlkj'})
+            body: JSON.stringify({ usuario: "gbfg", al: 'kljlkj' })
         }
         fetch('../src/pruebas/prueba.php', opciones)
             /* .then(respuesta => respuesta.text())
             .then(datos => console.log(datos)) */
-            .then(respuesta => respuesta.json())
+            .then(respuesta => {return respuesta.json()})
             .then(datos => console.log(datos))
     }
 
