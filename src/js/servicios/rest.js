@@ -1,10 +1,12 @@
 'use strict'
 
-/* 
-Servicio REST
-*/
-
-class Rest {
+/**
+ *Clase que implementa el servicio REST
+ *
+ * @export
+ * @class Rest
+ */
+export class Rest {
 
     static get(direccion) {
         fetch(direccion)
@@ -31,8 +33,9 @@ class Rest {
                 if (!respuesta.ok) {
                     throw Error(`${respuesta.status}-${respuesta.statusText}`)
                 }
-                else return respuesta.JSON.stringify()
+                else return respuesta.json()
             })
+            .then(datos=> {return datos})
     }
 
     static enviar() {
