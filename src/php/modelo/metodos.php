@@ -9,17 +9,23 @@ class Metodos
         $this->conexion = new Conexion();
 
     }
-    /** 
-     *hola
+   
+    /**
+     * Funcion para dar de alta al usuario
+     * @param String $nombre
+     * @param String $correo
+     * @param String $password
+     * @param String $rpassword
+     * 
+     * @return [type]
      */
-    //Aqui realizamos el alta de usuario
     function altaUsuario($nombre, $correo, $password, $rpassword)
     {
         if ($password == $rpassword) {
 
             $password_encry = password_hash($password, PASSWORD_BCRYPT);
             $insercion = "INSERT INTO usuario(nombre, clave, correo) VALUES ('$nombre','$password_encry', '$correo')";
-            $consulta = "SELECT correo FROM clientes WHERE correo LIKE '$correo'";
+            $consulta = "SELECT correo FROM usuario WHERE correo LIKE '$correo'";
             $comprobacion = $this->conexion->consultas($consulta);
             //echo $comprobacion = $this->conexion->filasAfectadas()  ;
             //Primero comprobamos si el usuario no existe ya en la base de datos

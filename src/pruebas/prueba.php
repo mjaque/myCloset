@@ -10,7 +10,7 @@ $datos = json_decode(file_get_contents('php://input'), true);
 $usuario=$datos['usuario'];
 
 /* codifica la respuesta en un json */
-//echo json_encode($datos); 
+echo json_encode($datos); 
 
 //$_POST[] no vale para recibir los datos aunque sean del método post
 //$usuario = $_POST['usuario'];
@@ -26,6 +26,6 @@ $lista=[
     2=>'nnyny',
     'colby'=>1
 ];
-echo json_encode($lista);
+//echo json_encode($lista);
 /* echo json_encode(1); */
 /* echo json_encode('holaa'); */

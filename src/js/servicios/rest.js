@@ -6,7 +6,7 @@
  * @export
  * @class Rest
  */
-export class Rest {
+ export class Rest {
 
     static get(direccion) {
         fetch(direccion)
