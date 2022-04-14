@@ -1,6 +1,6 @@
 
 body{
-    margin: 0
+    margin: 0;
 }
 
 /* Estilos del login */
@@ -20,6 +20,14 @@ body{
     width: 30%;
 }
 
-#formularioLogin{
+/* #formularioLogin{
     text-align: center;
+} */
+
+@media(max-width:600px){
+    #panelLogin{
+        background-image: url(../img/armario_vertical.jpg);
+        background-size: 120%;
+        background-position: 0px 45%;
+    }
 }
