@@ -8,7 +8,12 @@ y otro con valign-wrapper
 Alinea verticalmente el contenido. Para centrar vertical y horizontalmente, se debe usar un div para center
 y otro con valign-wrapper
 
-offset-xx
+-offset-xx
 Indica la columna tras la que se situara un bloque. Ejemplo:
 offset-m8, haría que el contenido se situara en la 9ª columna.
 *nota. offset-m12 enviará el contenido tras la 12ª columna
+
+-Uso de iconos
+.material-icons (left, right)
+La etiqueta que contiene el icono debe ser <i>.
+La etiqueta debe contener el nombre del icono que se quiere usar
