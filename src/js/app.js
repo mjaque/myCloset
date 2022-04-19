@@ -17,13 +17,13 @@ class App {
     }
 
     loginUsuario() {
-        let u;
-        let p;
+        let u = $('#correo').val();
+        let p = $('#clave').val();
 
         if (u !== "" && p != "") {
-            S.ajax(
+            $.ajax(
                 {
-                    url: urlserver + "src/php/controlador/controladorBackend.php",
+                    url: urlserver + "php/controlador/controladorBackend.php",
                     type: "POST",
                     data:
                         {

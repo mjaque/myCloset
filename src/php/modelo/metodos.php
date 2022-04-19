@@ -75,13 +75,15 @@ class Metodos
                 if (password_verify($password, $fila['password'])) {
                     session_start();
                     $_SESSION['usuario'] = $fila['correo'];
-                    header("Location: home.php");
+                    return true;
                 } else {
                     echo "La contraseña es incorrectos";
+                    return false;
                 }
             }
         } else {
             echo "El correo introducido no es correcto";
+            return false;
         }
 
     }
