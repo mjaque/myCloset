@@ -1,6 +1,6 @@
 'use strict'
 
-import {VistaPrincipal} from './vistas/vistaprincipal.js'
+//import {VistaPrincipal} from './vistas/vistaprincipal.js'
 /**
  *Controlador principal de la aplicación
  *
@@ -9,43 +9,47 @@ import {VistaPrincipal} from './vistas/vistaprincipal.js'
 class App {
     constructor() {
         window.onload = this.iniciar.bind(this)
+
     }
 
     iniciar() {
-        this.vistaPrincipal = new VistaPrincipal(this, document.body)
+        //this.vistaPrincipal = new VistaPrincipal(this, document.body)
 
+        console.log("entre dentro")
     }
 
-    loginUsuario() {
-        let u;
-        let p;
 
-        if (u !== "" && p != "") {
-            S.ajax(
-                {
-                    url: urlserver + "src/php/controlador/controladorBackend.php",
-                    type: "POST",
-                    data:
-                        {
-                            user: u,
-                            password: p
-                        },
-                    dataType: 'json',
-                    success: function (response) {
-                        //alert(response.success);
-                        if (response.success == true) {
-                            localStorage.setItem('sesion', u);// SE GUARDA DE SESION DEL USUARIO
-                            localStorage.setItem('us_nombre', response.us_nombre);// SE GUARDA DE SESION NOMBRE DE
+}
+new App();
+ function loginUsuario() {
+    let u = $('#correo').val();
+    let p = $('#clave').val();
+    console.log(u,p);
+    let urlserver = 'localhost';
+    if (u !== "" && p != "") {
+        $.ajax(
+            {
+                url:  "http://05.2daw.esvirgua.com/myCloset/src/php/controlador/controladorBackend.php",
+                type: "POST",
+                data:
+                    {
+                        user: u,
+                        password: p
+                    },
+                dataType: 'json',
+                success: function (response) {
+                    //alert(response.success);
+                    if (response.success == true) {
+                        localStorage.setItem('sesion', u);// SE GUARDA DE SESION DEL USUARIO
+                        localStorage.setItem('us_nombre', response.us_nombre);// SE GUARDA DE SESION NOMBRE DE
 
-                            localStorage.setItem('us_id', response.us_id);
-                            S(location).attr('href', "inicio.html");
-                            mensaje("nsj_1login", "texto_login", "BIENVENIDO" + response.us_nombre, "success")
-                        } else {
-                            mensaje("msj_login", "texto_login", response.mensaje, "danger");
-                        }
+                        localStorage.setItem('us_id', response.us_id);
+                        $(location).attr('href', "inicio.html");
+                        mensaje("nsj_1login", "texto_login", "BIENVENIDO" + response.us_nombre, "success")
+                    } else {
+                        mensaje("msj_login", "texto_login", response.mensaje, "danger");
                     }
-                });
-        }
+                }
+            });
     }
 }
-new App()
