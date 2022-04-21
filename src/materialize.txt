@@ -17,3 +17,7 @@ offset-m8, haría que el contenido se situara en la 9ª columna.
 .material-icons (left, right)
 La etiqueta que contiene el icono debe ser <i>.
 La etiqueta debe contener el nombre del icono que se quiere usar
+
+
+TRUCOS Y ANOTACIONES PARA DISEÑO
+Con valign-wrapper sobre el div principal

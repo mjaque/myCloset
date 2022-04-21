@@ -44,8 +44,8 @@ class Metodos
             echo "La contraseña no es correcta";
         }
 
-
     }
+    
     //Incio de sesion con consultas preprarada y contraseñas encriptadas
     public function iniciarSesion($correo, $password)
     {
