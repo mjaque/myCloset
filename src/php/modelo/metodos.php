@@ -70,9 +70,12 @@ class Metodos
         if ($this->conexion->numeroFilas($resultado) > 0) {
             while ($fila = $resultado->fetch_array(MYSQLI_ASSOC)) {
                 //echo $fila['correo'];
-                //echo $fila['password'];
+                //echo $fila['clave'];
+                //echo $password;
+                //$contrasena = password_verify($password, $fila['clave']);
                 //Si es correcto la contraseña Inicia la sesion y manda a la pagina home o incio.
-                if (password_verify($password, $fila['password'])) {
+                //echo $contrasena;
+                if (password_verify($password, $fila['clave'])) {
                     session_start();
                     $_SESSION['usuario'] = $fila['correo'];
                     return true;
