@@ -44,7 +44,10 @@ new App();
                         localStorage.setItem('us_nombre', response.us_nombre);// SE GUARDA DE SESION NOMBRE DE
 
                         localStorage.setItem('us_id', response.us_id);
-                        $(location).attr('href', "inicio.html");
+                        //$(location).attr('href', "inicio.html");
+                        document.getElementById('divLogin').style.display = 'none'
+                        document.getElementById('divMenuPrincipal').style.display = 'block'
+                        
                         mensaje("nsj_1login", "texto_login", "BIENVENIDO" + response.us_nombre, "success")
                     } else {
                         mensaje("msj_login", "texto_login", response.mensaje, "danger");
